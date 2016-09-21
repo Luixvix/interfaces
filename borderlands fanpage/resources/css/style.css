@@ -8,7 +8,7 @@
 
 html{
     background-color: #6c0202;
-    color: #555;
+    color: #ffa804;;
     font-family: 'Lato', 'Arial', sans-serif;
     font-size: 20px;
     font-weight: 300;
@@ -28,10 +28,13 @@ html{
 /*Reusable*/
 .row {
     max-width: 1140px;
-    margin: auto;
+    margin: 0 auto;
 }
 .box {
     padding: 1%;
+}
+section {
+    padding: 80px 0;
 }
 /*Header*/
 .cabecera {
@@ -71,6 +74,7 @@ html{
 
 .cabecera li a:hover,
 .cabecera li a:active {
+    color: #ffcc7b;
     border-bottom: 2px solid #6c0202;
 }
 /*Letras*/
@@ -81,6 +85,32 @@ h1 {
 }
 
 h2{
-    font-size: 70%;
-    
+    font-size: 180%;
+    text-align: center;
+    color: #ffa804;
 }
+
+/*seccion personajes*/
+.personajes img {
+    width: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
