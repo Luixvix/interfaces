@@ -1,0 +1,86 @@
+/*Set up basico*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #6c0202;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+.clearfix{
+    zoom: 1;
+}
+.clearfix:after{
+    display: block;
+    content: '.';
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    
+}
+/*Reusable*/
+.row {
+    max-width: 1140px;
+    margin: auto;
+}
+.box {
+    padding: 1%;
+}
+/*Header*/
+.cabecera {
+    font-size: 200%;
+    text-align: left;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(img/fondo-cabecera.jpg);
+    background-position: top;
+    background-size: cover;
+    
+}
+
+.cabecera img{
+    float: left;
+    height: 150px;
+    width: auto;
+    margin: 3% 5% 3% 5%;
+}
+/*menu*/
+.cabecera li{
+    display: block;
+    margin: 2% 10% 2% 10%;
+    text-align: center;
+    
+    
+}
+
+.cabecera li a:link,
+.cabecera li a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 50%;
+    color: #ffa804;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    padding: 8px 0;
+}
+
+.cabecera li a:hover,
+.cabecera li a:active {
+    border-bottom: 2px solid #6c0202;
+}
+/*Letras*/
+h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 200%;
+    color: #ffa804;
+}
+
+h2{
+    font-size: 70%;
+    
+}
