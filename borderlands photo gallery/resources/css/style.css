@@ -17,6 +17,10 @@
 .picon{
     position: relative;
     float: right;
+    color:#ffa804;
+    font-size: 30px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 .pbox {
     float:left;
