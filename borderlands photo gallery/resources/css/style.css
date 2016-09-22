@@ -22,6 +22,11 @@
     padding-left: 2%;
     padding-right: 2%;
 }
+.picon:hover{
+    color: #ffc250;
+    transform: scale(1.5);
+    animation-duration: 2s;
+}
 .pbox {
     float:left;
     position: relative;
