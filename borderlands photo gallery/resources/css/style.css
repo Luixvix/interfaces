@@ -1,5 +1,10 @@
 /*Set up basico*/
-
+.content {
+    position:absolute;
+    height:80%; /* = 100% - 2*10% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
+}
 *{
     margin: 0;
     padding: 0;
@@ -83,4 +88,12 @@ h1 {
 h2{
     font-size: 70%;
     
+}
+.pbox {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom: 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    overflow:hidden;
 }
