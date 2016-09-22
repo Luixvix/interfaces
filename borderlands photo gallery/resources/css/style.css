@@ -12,7 +12,7 @@
     padding-top: 1%;
     padding-left: 2%;
     padding-right: 2%;
-    color:aliceblue;
+    color:#ffa804;
 }
 .picon{
     position: relative;
@@ -30,7 +30,7 @@
 .photo {
     position:relative;
     height:90%; /* = 100% - 2*5% padding */
-    width:90%; /* = 100% - 2*5% padding */
+    width:100%; /* = 100% - 2*5% padding */
     padding: 5%;
     
 }
@@ -44,6 +44,7 @@
     height:auto;
     max-height:90%;
     max-width:100%;
+    padding-bottom: 3%;
 }
 .ptext{
     font-weight:9;
