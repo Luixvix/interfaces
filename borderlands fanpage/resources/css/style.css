@@ -50,16 +50,17 @@ section {
 .cabecera {
     font-size: 200%;
     text-align: left;
+    display: block;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(img/fondo-cabecera.jpg);
     background-position: top;
     background-size: cover;
 }
 
 .cabecera h1 {
-    display: block;
+    display: inline-block;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
     .cabecera h1 {
         width: 100%;
         font-size: 80%;
@@ -67,20 +68,26 @@ section {
     }
 }
 
-@media only screen and (max-width: 480px) {
-    .cabecera img {
-        display: block;
-        height: auto;
-        width: 50%;
-        margin: auto;
+@media only screen and (max-width: 600px) {
+    .logo img {
+        margin: 0 32% 0 32%;
+}
+    .logo {
+        margin: 0;
+        width: 100%;
     }
+    
+   
 }
 
-.cabecera img {
+.logo {
     float: left;
+    display: inline-block;
     height: 150px;
-    width: auto;
     margin: 3% 5% 3% 5%;
+}
+.logo img {
+    height: 100%;
 }
 
 
