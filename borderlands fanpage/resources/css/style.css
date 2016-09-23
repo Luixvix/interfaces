@@ -1,68 +1,98 @@
 /*Set up basico*/
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     background-color: #6c0202;
-    color: #ffa804;;
+    color: #ffa804;
+    ;
     font-family: 'Lato', 'Arial', sans-serif;
     font-size: 20px;
     font-weight: 300;
     text-rendering: optimizeLegibility;
 }
-.clearfix{
+
+.clearfix {
     zoom: 1;
 }
-.clearfix:after{
+
+.clearfix:after {
     display: block;
     content: '.';
     clear: both;
     height: 0;
     visibility: hidden;
-    
 }
+
+
 /*Reusable*/
+
 .row {
     max-width: 1140px;
     margin: 0 auto;
 }
+
 .box {
     padding: 1%;
 }
+
 section {
     padding: 80px 0;
 }
+
+
 /*Header*/
+
 .cabecera {
     font-size: 200%;
     text-align: left;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(img/fondo-cabecera.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(img/fondo-cabecera.jpg);
     background-position: top;
     background-size: cover;
-    
 }
 
-.cabecera img{
+.cabecera h1 {
+    display: block;
+}
+
+@media only screen and (max-width: 480px) {
+    .cabecera h1 {
+        width: 100%;
+        font-size: 80%;
+        text-align: center;
+    }
+    
+}
+@media only screen and (max-width: 480px) {
+.cabecera img {
+        float: left;
+        height: auto;
+        width: 150px;
+        margin: 3% 5% 3% 5%;
+    }
+}
+.cabecera img {
     float: left;
     height: 150px;
     width: auto;
     margin: 3% 5% 3% 5%;
 }
+
+
 /*menu*/
-.cabecera li{
+
+.cabecera a {
     display: block;
     margin: 2% 10% 2% 10%;
     text-align: center;
-    
-    
 }
 
-.cabecera li a:link,
-.cabecera li a:visited {
+.cabecera a:link,
+.cabecera a:visited {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 50%;
@@ -72,45 +102,37 @@ section {
     padding: 8px 0;
 }
 
-.cabecera li a:hover,
-.cabecera li a:active {
+.cabecera a:hover,
+.cabecera a:active {
     color: #ffcc7b;
     border-bottom: 2px solid #6c0202;
 }
+
+
 /*Letras*/
+
 h1 {
     font-family: 'Archivo Black', sans-serif;
     font-size: 200%;
     color: #ffa804;
 }
 
-h2{
+h2 {
+    font-family: 'Archivo Black', sans-serif;
     font-size: 180%;
     text-align: center;
     color: #ffa804;
+    margin-bottom: 40px;
 }
 
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
 /*seccion personajes*/
+
 .personajes img {
     width: 80%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
