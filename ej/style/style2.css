@@ -97,7 +97,7 @@ html{
 .cabecera {
     font-size: 200%;
     text-align: left;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(img/fondo-cabecera.jpg);
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../images/fondo-cabecera.jpg);
     background-position: top;
     background-size: cover;
 
