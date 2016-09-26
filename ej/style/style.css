@@ -135,12 +135,23 @@ h2 {
 
 h3 {
     text-align: center;
+    margin-top: 5px;
     margin-bottom: 20px;
+}
+p {
+    margin-bottom: 15px;
 }
 
 
 /*seccion personajes*/
 
 .personajes img {
-    width: 80%;
+    max-width: 80%;
+    max-height: 210px;
+    margin: 2% 15%;
+}
+
+.personaje-bloque {
+    padding: 10px 10px;
+    background-color: black;
 }
