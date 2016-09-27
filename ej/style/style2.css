@@ -44,7 +44,20 @@
     max-height: 250px;
 
 }
-
+.rs:active{
+    transform: scale(3);
+    transition-duration: 0.5s;
+    position: relative;
+    object-position: center;
+    z-index: 100;
+}
+/*
+.photo:active{
+    transform: scale(3);
+    transition-duration: 0.5s;
+    z-index: 100;
+}
+*/
 /*  For responsive images */
 
 .photo .rs{
