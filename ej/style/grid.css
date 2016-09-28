@@ -84,7 +84,7 @@
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
 	.span-3-of-3 {
 		width: 100%;
 	}
@@ -130,6 +130,20 @@
 	}
 	.span-1-of-4 {
 		width: 100%;
+	}
+}
+@media only screen and (max-width: 700px) {
+	.span-4-of-4 {
+		width: 100%;
+	}
+	.span-3-of-4 {
+		width: 100%;
+	}
+	.span-2-of-4 {
+		width: 45%;
+	}
+	.span-1-of-4 {
+		width: 45%;
 	}
 }
 
