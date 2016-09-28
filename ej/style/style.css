@@ -144,7 +144,9 @@ p {
 
 
 /*seccion personajes*/
-
+.seccion-personajes {
+    background-color: #5a0000;
+}
 .personajes img {
     max-width: 80%;
     max-height: 210px;
@@ -154,6 +156,11 @@ p {
 .personaje-bloque {
     padding: 10px 10px;
     background-color: black;
+}
+/*seccion otros personajes*/
+.otros-personajes img {
+    max-height: 350px;
+    max-width: 90%;
 }
 /********JORGE*************/
 .footer{
