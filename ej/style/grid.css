@@ -35,7 +35,7 @@
 
 /*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 	.col {
 		margin: 1% 0 1% 0%;
         margin: 0;
@@ -56,7 +56,7 @@
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 	.span-2-of-2 {
 		width: 100%;
 	}
@@ -84,7 +84,7 @@
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
 	.span-3-of-3 {
 		width: 100%;
 	}
@@ -118,7 +118,7 @@
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 	.span-4-of-4 {
 		width: 100%;
 	}
