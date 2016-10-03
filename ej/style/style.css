@@ -171,6 +171,7 @@ p, i, cite {
     padding: 10px 0px;
     background-color: Black;
 
+
 }
 .personaje-bloque h3{
     background-image: linear-gradient(black, #5f0202);
@@ -192,7 +193,7 @@ p, i, cite {
 /********JORGE*************/
 .footer{
     padding-bottom: 2%;
-    padding-top: 5%;
+    padding-top: 10px;
 }
 .footer-link{
     text-decoration: none;
@@ -206,5 +207,5 @@ p, i, cite {
 
 .seccion-footer {
     background-color: black;
-    padding: 10px !important;
+    padding:0;
 }
