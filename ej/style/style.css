@@ -65,9 +65,12 @@ section {
         font-size: 80%;
         text-align: center;
     }
-}
-
-@media only screen and (max-width: 600px) {
+    h2 {
+        margin-bottom: 0 !important;
+    }
+    section{
+        padding: 0;
+    }
     .logo img {
         display: block;
         margin: auto;
@@ -136,7 +139,11 @@ h2 {
     color: #ffa804;
     margin-bottom: 40px;
     border-style: solid;
-    background-image: linear-gradient(black, red);
+    border-width: 1px;
+
+    background-image: radial-gradient(rgba(0, 0, 0, 0.35),black), url(../images/borderlands-logo.png);
+    background-position: center;
+    background-size: cover;
 
 }
 
@@ -195,4 +202,9 @@ p, i, cite {
 .footer-link:hover{
     color: #ffc455;
     text-decoration-line: underline;
+}
+
+.seccion-footer {
+    background-color: black;
+    padding: 10px !important;
 }
