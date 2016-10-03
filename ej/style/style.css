@@ -7,9 +7,8 @@
 }
 
 html {
-    background-color: #6c0202;
+    background-image: radial-gradient(#6c0202, black);
     color: #ffa804;
-    ;
     font-family: 'Lato', 'Arial', sans-serif;
     font-size: 20px;
     font-weight: 300;
@@ -41,7 +40,7 @@ html {
 }
 
 section {
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 
@@ -70,12 +69,15 @@ section {
 
 @media only screen and (max-width: 600px) {
     .logo img {
-        margin: 0 32% 0 32%;
-}
-    .logo {
-        margin: 0;
-        width: 100%;
+        display: block;
+        margin: auto;
+
     }
+    .logo {
+        width: 90%;
+
+    }
+
 
 
 }
@@ -142,11 +144,8 @@ p {
     margin-bottom: 15px;
 }
 
-
 /*seccion personajes*/
-.seccion-personajes {
-    background-color: #5a0000;
-}
+
 .personajes img {
     max-width: 80%;
     max-height: 210px;
@@ -155,12 +154,24 @@ p {
 
 .personaje-bloque {
     padding: 10px 10px;
-    background-color: black;
+    background-color: Black;
+}
+.personaje-bloque h3{
+    background-color: #5f0202;
 }
 /*seccion otros personajes*/
+.seccion-otros-personajes{
+    padding-top: 0;
+}
 .otros-personajes img {
     max-height: 350px;
     max-width: 90%;
+    margin: 2% 10%;
+    display: inline-block;
+}
+.otros-personajes cite {
+    display: block;
+    text-align: right;
 }
 /********JORGE*************/
 .footer{
