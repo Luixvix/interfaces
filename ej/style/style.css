@@ -50,7 +50,7 @@ section {
     font-size: 200%;
     text-align: left;
     display: block;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../images/fondo-cabecera.jpg);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.44), rgb(0, 0, 0)),url(../images/fondo-cabecera.jpg);
     background-position: top;
     background-size: cover;
 }
@@ -71,13 +71,15 @@ section {
     .logo img {
         display: block;
         margin: auto;
-
     }
     .logo {
         width: 90%;
-
     }
 
+    .personajes img, .otros-personajes img {
+        max-width: 100% !important;
+        max-height: 500px !important;
+    }
 
 
 }
@@ -133,31 +135,38 @@ h2 {
     text-align: center;
     color: #ffa804;
     margin-bottom: 40px;
+    border-style: solid;
+    background-image: linear-gradient(black, red);
+
 }
+
 
 h3 {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 20px;
 }
-p {
-    margin-bottom: 15px;
+p, i, cite {
+    display: block;
+    margin: 0 10px 15px 10px;
+
 }
 
 /*seccion personajes*/
-
 .personajes img {
     max-width: 80%;
     max-height: 210px;
-    margin: 2% 15%;
+    display: block;
+    margin: 10px auto;
 }
 
 .personaje-bloque {
-    padding: 10px 10px;
+    padding: 10px 0px;
     background-color: Black;
+
 }
 .personaje-bloque h3{
-    background-color: #5f0202;
+    background-image: linear-gradient(black, #5f0202);
 }
 /*seccion otros personajes*/
 .seccion-otros-personajes{
@@ -166,8 +175,8 @@ p {
 .otros-personajes img {
     max-height: 350px;
     max-width: 90%;
-    margin: 2% 10%;
-    display: inline-block;
+    display: block;
+    margin: 10px auto;
 }
 .otros-personajes cite {
     display: block;
