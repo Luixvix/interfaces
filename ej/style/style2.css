@@ -1,6 +1,23 @@
 /********** HEADER ***********/
 .user{
     float: left;
+    width: 100%;
+}
+.user a{
+    display: block;
+    margin: 2% 10% 2% 10%;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 50%;
+    color: #ffa804;
+    padding: 8px 0;
+}
+.user img{
+    float: left;
+    height: 50px !important;
+    width: auto;
+    margin: 0 4%;
 }
 .menu{
     float: left;
@@ -141,7 +158,7 @@ html {
     background-size: cover;
 }
 
-.cabecera img{
+/*.cabecera img{
     float: left;
     height: 150px;
     width: auto;
