@@ -1,3 +1,37 @@
+/*Set up basico*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-image: radial-gradient(#6c0202, black);
+    color: #ffa804;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+.clearfix{
+    zoom: 1;
+}
+.clearfix:after{
+    display: block;
+    content: '.';
+    clear: both;
+    height: 0;
+    visibility: hidden;
+
+}
+/*Reusable*/
+.row {
+    max-width: 1140px;
+    margin: auto;
+}
+.box {
+    padding: 1%;
+}
 /********** HEADER ***********/
 .user{
     float: left;
@@ -14,46 +48,85 @@
     padding: 8px 0;
 }
 .user img{
+    background-image: radial-gradient(#777777, black);
+    border-style: solid;
+    border-color: #777777;
+    border-radius: 5%;
+    border-width: 2px;
     float: left;
-    height: 50px !important;
+    height: 50px;
     width: auto;
     margin: 0 4%;
 }
+
 .menu{
     float: left;
     padding: 2% 2%;
 }
-/************** END HEADER ************/
-
-
-/*Set up basico*/
-.footer {
-    padding-bottom: 2%;
-    padding-top: 10px;
+.menu-options {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.51));
 }
-.footer p {
-    margin: 5px 10px 0 0;
-    float: right;
-    color: #848484;
-    font-size: 70%;
+.menu-boton {
+    border-style: hidden dotted hidden dotted;
+}
+/*Header*/
+.cabecera {
+    font-size: 200%;
+    text-align: left;
+    display: block;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.44), rgb(0, 0, 0)), url(../images/fondo-cabecera.jpg);
+    background-position: top;
+    background-size: cover;
 }
 
-.footer-link {
-    margin-left: 10px;
+/*.cabecera img{
+    float: left;
+    height: 150px;
+    width: auto;
+    margin: 3% 5% 3% 5%;
+}
+/*menu*/
+.cabecera li{
+    display: block;
+    margin: 2% 10% 2% 10%;
+    text-align: center;
+
+
+}
+
+.cabecera li a:link,
+.cabecera li a:visited {
     text-decoration: none;
-    font-family: monospace;
+    text-transform: uppercase;
+    font-size: 50%;
+    color: #ffa804;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    padding: 8px 0;
+}
+
+.cabecera li a:hover,
+.cabecera li a:active {
+    border-bottom: 2px solid #6c0202;
+}
+/*Letras*/
+h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 200%;
     color: #ffa804;
 }
 
-.footer-link:hover {
-    color: #ffc455;
-    text-decoration-line: underline;
+h2{
+    font-size: 70%;
+
 }
 
-.seccion-footer {
-    background-color: black;
-    padding: 0;
-}
+
+/************** END HEADER ************/
+
+
+
+
 .ptittle{
     position: relative;
     float: left;
@@ -121,88 +194,33 @@
     font-weight:9;
     font-size:24px;
 }
-/*******************************/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-html {
-    background-image: radial-gradient(#6c0202, black);
-    color: #ffa804;
-    font-family: 'Lato', 'Arial', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    text-rendering: optimizeLegibility;
+/*footer*/
+.footer {
+    padding-bottom: 2%;
+    padding-top: 10px;
 }
-.clearfix{
-    zoom: 1;
-}
-.clearfix:after{
-    display: block;
-    content: '.';
-    clear: both;
-    height: 0;
-    visibility: hidden;
-
-}
-/*Reusable*/
-.row {
-    max-width: 1140px;
-    margin: auto;
-}
-.box {
-    padding: 1%;
-}
-/*Header*/
-.cabecera {
-    font-size: 200%;
-    text-align: left;
-    display: block;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.44), rgb(0, 0, 0)), url(../images/fondo-cabecera.jpg);
-    background-position: top;
-    background-size: cover;
-}
-
-/*.cabecera img{
-    float: left;
-    height: 150px;
-    width: auto;
-    margin: 3% 5% 3% 5%;
-}
-/*menu*/
-.cabecera li{
-    display: block;
-    margin: 2% 10% 2% 10%;
-    text-align: center;
-
-
-}
-
-.cabecera li a:link,
-.cabecera li a:visited {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 50%;
-    color: #ffa804;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.2s;
-    padding: 8px 0;
-}
-
-.cabecera li a:hover,
-.cabecera li a:active {
-    border-bottom: 2px solid #6c0202;
-}
-/*Letras*/
-h1 {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 200%;
-    color: #ffa804;
-}
-
-h2{
+.footer p {
+    margin: 5px 10px 0 0;
+    float: right;
+    color: #848484;
     font-size: 70%;
-
 }
+
+.footer-link {
+    margin-left: 10px;
+    text-decoration: none;
+    font-family: monospace;
+    color: #ffa804;
+}
+
+.footer-link:hover {
+    color: #ffc455;
+    text-decoration-line: underline;
+}
+
+.seccion-footer {
+    background-color: black;
+    padding: 0;
+}
+/*******************************/
