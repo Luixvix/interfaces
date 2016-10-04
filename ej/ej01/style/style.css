@@ -1,4 +1,4 @@
-/*Set up basico*/
+/*****************Set-up basico*****************/
 
 * {
     margin: 0;
@@ -28,7 +28,7 @@ html {
 }
 
 
-/*Reusable*/
+/*****************Reusable*****************/
 
 .row {
     max-width: 1140px;
@@ -44,7 +44,7 @@ section {
 }
 
 
-/*Header*/
+/*****************Header*****************/
 
 .cabecera {
     font-size: 200%;
@@ -59,67 +59,7 @@ section {
     display: inline-block;
 }
 
-@media only screen and (max-width: 768px) and (min-width: 600px) {
-    .logo img {
-        height: 200px!important;
-        display: block;
-        margin: auto;
-    }
-    .logo {
-        width: 90%;
-    }
-    .cabecera h1 {
-        width: 100%;
-        font-size: 140%;
-        text-align: center;
-    }
-    .cabecera a {
-        font-size: 35% !important;
-    }
-    .personaje-bloque {
-        padding: 20px 0px;
-    }
-    .personajes img,
-    .otros-personajes img {
-        max-width: 100% !important;
-        max-height: 400px !important;
-    }
-     .footer-link {
-        font-size: 80%;
-    }
-}
 
-@media only screen and (max-width: 600px) {
-    .cabecera h1 {
-        width: 100%;
-        font-size: 80%;
-        text-align: center;
-    }
-    h2 {
-        margin-bottom: 0 !important;
-    }
-    section {
-        padding: 0;
-    }
-    .logo img {
-        display: block;
-        margin: auto;
-    }
-    .logo {
-        width: 90%;
-    }
-    .personaje-bloque {
-        padding: 20px 0px;
-    }
-    .personajes img,
-    .otros-personajes img {
-        max-width: 100% !important;
-        max-height: 300px !important;
-    }
-    .footer-link {
-        font-size: 80%;
-    }
-}
 
 .logo {
     float: left;
@@ -133,7 +73,7 @@ section {
 }
 
 
-/*menu*/
+/*****************Menu Cabecera*****************/
 
 .cabecera a {
     display: block;
@@ -159,7 +99,7 @@ section {
 }
 
 
-/*Letras*/
+/*****************Letras*****************/
 
 h1 {
     font-family: 'Archivo Black', sans-serif;
@@ -195,7 +135,7 @@ cite {
 }
 
 
-/*seccion personajes*/
+/*****************Seccion Personajes*****************/
 
 .personajes img {
     max-width: 80%;
@@ -214,7 +154,7 @@ cite {
 }
 
 
-/*seccion otros personajes*/
+/*****************Seccion otros personajes*****************/
 
 .seccion-otros-personajes {
     padding-top: 0;
@@ -233,7 +173,7 @@ cite {
 }
 
 
-/********JORGE*************/
+/*****************Footer*****************/
 
 .footer {
     padding-bottom: 2%;
@@ -261,4 +201,68 @@ cite {
 .seccion-footer {
     background-color: black;
     padding: 0;
+}
+
+/*****************Responsive Tablet*****************/
+
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+    .logo img {
+        height: 200px!important;
+        display: block;
+        margin: auto;
+    }
+    .logo {
+        width: 90%;
+    }
+    .cabecera h1 {
+        width: 100%;
+        font-size: 140%;
+        text-align: center;
+    }
+    .cabecera a {
+        font-size: 35% !important;
+    }
+    .personaje-bloque {
+        padding: 20px 0px;
+    }
+    .personajes img,
+    .otros-personajes img {
+        max-width: 100% !important;
+        max-height: 400px !important;
+    }
+     .footer-link {
+        font-size: 80%;
+    }
+}
+/*****************Responsive Mobile*****************/
+@media only screen and (max-width: 600px) {
+    .cabecera h1 {
+        width: 100%;
+        font-size: 80%;
+        text-align: center;
+    }
+    h2 {
+        margin-bottom: 0 !important;
+    }
+    section {
+        padding: 0;
+    }
+    .logo img {
+        display: block;
+        margin: auto;
+    }
+    .logo {
+        width: 90%;
+    }
+    .personaje-bloque {
+        padding: 20px 0px;
+    }
+    .personajes img,
+    .otros-personajes img {
+        max-width: 100% !important;
+        max-height: 300px !important;
+    }
+    .footer-link {
+        font-size: 80%;
+    }
 }
