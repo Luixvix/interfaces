@@ -24,6 +24,7 @@ html {
     visibility: hidden;
 
 }
+
 /*Reusable*/
 .row {
     max-width: 1140px;
@@ -67,6 +68,9 @@ html {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.51));
 }
 .menu-boton {
+    border-style: hidden dotted hidden hidden;
+}
+.menu-boton:first-child {
     border-style: hidden dotted hidden dotted;
 }
 /*Header*/
@@ -90,7 +94,8 @@ html {
     display: block;
     margin: 2% 10% 2% 10%;
     text-align: center;
-
+    line-height: 120%;
+    vertical-align: middle;
 
 }
 
@@ -102,7 +107,7 @@ html {
     color: #ffa804;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.2s;
-    padding: 8px 0;
+    padding: 5px 0;
 }
 
 .cabecera li a:hover,
@@ -135,7 +140,9 @@ h2{
     padding-right: 2%;
     color:#ffa804;
 }
-.picon{
+.picon button{
+    background-color: rgba(255, 255, 255, 0);
+    border-style: none;
     position: relative;
     float: right;
     color:#ffa804;
@@ -143,9 +150,10 @@ h2{
     padding-left: 2%;
     padding-right: 2%;
 }
-.picon:hover{
+.picon button:hover{
+
     color: #ffc250;
-    transform: scale(1.3);
+    transform: scale(1.1);
     transition-duration: 0.5s;
 }
 .pbox {
