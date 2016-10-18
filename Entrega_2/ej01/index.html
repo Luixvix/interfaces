@@ -16,6 +16,19 @@
         x.style.color = "red";
 
     }
+
+    function share(id) {
+        var img = $(id);
+        var sh = attr("src", "images/shared.png");
+        img.attr("src", sh);
+        img.fadeTo('slow', 0.8, function() {
+            img.attr("src", newSrc);
+        });
+        img.fadeTo('slow', 1);
+
+    }
+
+
 </script>
 
 <body>
@@ -51,12 +64,12 @@
     </header>
     <section class="row seccion-fotos">
         <div class="pbox">
-            <div class="photo clearfix"> <img class="rs" src="images/pg_1.png"> </div>
+            <div class="photo clearfix"> <img class="rs" id="img1" src="images/pg_1.png"> </div>
             <div class="pfooter">
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick="" ><i class="ion-android-bookmark"></i></button>
+                    <button onclick="share(img1)"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
