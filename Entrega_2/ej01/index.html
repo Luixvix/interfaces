@@ -11,25 +11,7 @@
     <title>Borderlands Fanpage</title>
 </head>
 
-<script>
-    function fav(x) {
-        x.style.color = "red";
 
-    }
-
-    function share(id) {
-        var img = $(id);
-        var sh = attr("src", "images/shared.png");
-        img.attr("src", sh);
-        img.fadeTo('slow', 0.8, function() {
-            img.attr("src", newSrc);
-        });
-        img.fadeTo('slow', 1);
-
-    }
-
-
-</script>
 
 <body>
     <header>
@@ -57,13 +39,13 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick="share(img1)"><i class="ion-android-bookmark"></i></button>
+                    <button onclick="share()" id="btn1"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav1)" id="fav1"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -79,7 +61,7 @@
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav2)" id="fav2"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -95,7 +77,7 @@
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav3)" id="fav3"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -111,7 +93,7 @@
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav4)" id="fav4"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -127,7 +109,7 @@
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav5)" id="fav5"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -143,7 +125,7 @@
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav6)" id="fav6"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -159,7 +141,7 @@
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav7)" id="fav7"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -175,7 +157,7 @@
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav8)" id="fav8"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -191,7 +173,7 @@
                     <button onclick=""><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick="fav(fav9)" id="fav9"><i class="ion-heart"></i></button>
+                    <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
         </div>
@@ -207,6 +189,34 @@
         </div>
     </section>
 </body>
+
+<script>
+    var favoritos = document.querySelectorAll(".fav");
+
+    for (var i = 0; i < favoritos.length; i++) {
+
+        // https://developer.mozilla.org/es/docs/Web/API/Element/classList
+        favoritos[i].addEventListener("click",
+            function () {
+
+                if (this.firstChild.style.color == "red") {
+                    this.firstChild.style.color = "#ffa804";
+                } else {
+                    this.firstChild.style.color = "red";
+                }
+            });
+    }
+
+    /* */
+
+
+    function share(id1) {
+
+
+
+
+    }
+</script>
 
 </html>
 <!--
