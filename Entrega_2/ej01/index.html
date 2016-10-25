@@ -34,12 +34,12 @@
     </header>
     <section class="row seccion-fotos">
         <div class="pbox">
-            <div class="photo clearfix"> <img class="rs" id="img1" src="images/pg_1.png"> </div>
+            <div class="photo clearfix"> <img class="rs" src="images/pg_1.png"> </div>
             <div class="pfooter">
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick="share()" id="btn1"><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -71,7 +71,7 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -87,7 +87,7 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -103,7 +103,7 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -119,7 +119,7 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -135,7 +135,7 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -151,7 +151,7 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -167,7 +167,7 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -208,13 +208,27 @@
     }
 
     /* */
-
-
-    function share(id1) {
+    var compartir = document.querySelectorAll(".share");
 
 
 
 
+    for (var i = 0; i < compartir.length; i++) {
+
+        // https://developer.mozilla.org/es/docs/Web/API/Element/classList
+        compartir[i].addEventListener("click",
+            function () {
+            var actual = this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild;
+                //alert(this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.className);
+                //this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.setAttribute("src", "imager/shared.png");
+            var $actual = $(actual);
+                $actual.fadeOut(function () {
+                    $(this).load(function () {
+                        $(this).fadeIn();
+                    });
+                    $(this).attr("src", "shared.png");
+                });
+            });
     }
 </script>
 
