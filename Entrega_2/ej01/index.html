@@ -55,7 +55,7 @@
                 <div class="ptittle">
                     <h3>Screenshot</h3></div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-android-bookmark"></i></button>
+                    <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
                     <button onclick=""><i class="ion-forward"></i></button>
@@ -211,25 +211,24 @@
     var compartir = document.querySelectorAll(".share");
 
 
-
-
     for (var i = 0; i < compartir.length; i++) {
 
         // https://developer.mozilla.org/es/docs/Web/API/Element/classList
         compartir[i].addEventListener("click",
             function () {
-            var actual = this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild;
+                var actual = this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild;
+                var img = this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.getAttribute("src");
                 //alert(this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.className);
-                //this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.setAttribute("src", "imager/shared.png");
-            var $actual = $(actual);
-                $actual.fadeOut(function () {
-                    $(this).load(function () {
-                        $(this).fadeIn();
-                    });
-                    $(this).attr("src", "shared.png");
-                });
+
+                actual.setAttribute("src", "images/shared.png");
+                setTimeout(function(){
+                    actual.setAttribute("src", img);
+                }, 1500);
+
+
             });
     }
+
 </script>
 
 </html>
