@@ -34,7 +34,7 @@
         </div>
     </header>
     <section class="row seccion-fotos">
-        <div class="pbox">
+        <div class="col span-1-of-3 pbox">
             <div class="photo clearfix"> <img class="rs" src="images/pg_1.png"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -43,17 +43,17 @@
                     <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-forward"></i></button>
+                    <button class="comentar"><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
                     <button class="fav"><i class="ion-heart"></i></button>
                 </div>
             </div>
-            <div class="textbox">
-                <p class="coment"></p>
+            <div class="textbox clearfix">
+                <p class="coment">paco</p>
             </div>
         </div>
-        <div class="pbox ">
+        <div class="col span-1-of-3 pbox ">
             <div class="photo clearfix"> <img class="rs" src="images/pg_2.jpg"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -62,7 +62,7 @@
                     <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-forward"></i></button>
+                    <button class="comentar"><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
                     <button class="fav"><i class="ion-heart"></i></button>
@@ -70,10 +70,9 @@
             </div>
             <div class="textbox">
                 <p class="coment"></p>
-                <p class="coment"></p>
             </div>
         </div>
-        <div class="pbox">
+        <div class="col span-1-of-3 pbox">
             <div class="photo clearfix"> <img class="rs" src="images/pg_3.jpg"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -90,11 +89,9 @@
             </div>
             <div class="textbox">
                 <p class="coment"></p>
-                <p class="coment"></p>
-                <p class="coment"></p>
             </div>
         </div>
-        <div class="pbox">
+        <div class="col span-1-of-3 pbox">
             <div class="photo clearfix"> <img class="rs" src="images/pg_4.jpg"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -113,7 +110,7 @@
                 <p class="coment"></p>
             </div>
         </div>
-        <div class="pbox">
+        <div class="col span-1-of-3 pbox">
             <div class="photo clearfix"> <img class="rs" src="images/pg_5.jpg"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -132,7 +129,7 @@
                 <p class="coment"></p>
             </div>
         </div>
-        <div class="pbox">
+        <div class="col span-1-of-3 pbox">
             <div class="photo clearfix"> <img class="rs" src="images/pg_6.jpg"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -151,7 +148,7 @@
                 <p class="coment"></p>
             </div>
         </div>
-        <div class="pbox">
+        <div class="col span-1-of-3 pbox">
             <div class="photo clearfix"> <img class="rs" src="images/pg_7.png"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -160,7 +157,7 @@
                     <button class="share"><i class="ion-android-bookmark"></i></button>
                 </div>
                 <div class="picon">
-                    <button onclick=""><i class="ion-forward"></i></button>
+                    <button class="comentar"><i class="ion-forward"></i></button>
                 </div>
                 <div class="picon">
                     <button class="fav"><i class="ion-heart"></i></button>
@@ -170,7 +167,7 @@
                 <p class="coment"></p>
             </div>
         </div>
-        <div class="pbox">
+        <div class="col span-1-of-3 pbox">
             <div class="photo clearfix"> <img class="rs" src="images/pg_8.jpg"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -187,9 +184,10 @@
             </div>
             <div class="textbox">
                 <p class="coment"></p>
+                <a class="expandir"></a>
             </div>
         </div>
-        <div class="pbox">
+        <div class="col span-1-of-3 pbox">
             <div class="photo clearfix"> <img class="rs" src="images/pg_9.jpg"> </div>
             <div class="pfooter">
                 <div class="ptittle">
@@ -205,6 +203,7 @@
                 </div>
             </div>
             <div class="textbox">
+
                 <p class="coment"></p>
             </div>
         </div>
@@ -258,13 +257,14 @@
             });
     }
 
-    function escribir() {
+    $(".comentar").click(function() {
+        //alert(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild.className);
         var comentario = prompt("Comenta:", "");
 
-        if (person != null) {
-            document.getElementById("demo").innerHTML = comentario;
+        if (comentario != null) {
+           $(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild).text( comentario);
         }
-    }
+    });
 
     $(".expandir").click(function () {
 
@@ -272,10 +272,10 @@
         var val = $(this).text();
 
         if (val == "+") {
-            $("div").css('height', '200px');
+            $("textbox").css('height', '200px');
             $(this).text("-");
         } else {
-            $("div").css('height', '20');
+            $("textbox").css('height', '20');
             $(this).text("+");
         }
 
