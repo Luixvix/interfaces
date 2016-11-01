@@ -315,7 +315,7 @@
                 $(coment).css("visibility", "hidden");
                 $(enviar).css("visibility", "hidden");
                 $(expand).css("visibility", "visible");
-                $(seccion).css('height', '48px');
+                $(seccion).css('height', '50px');
 
             }
         });
@@ -328,10 +328,10 @@
         var val = $(this).text();
 
         if (val == "+") {
-            $(this.parentElement).css('height', '200px');
+            $(this.parentElement).css('height', 'inherit');
             $(this).text("-");
         } else {
-            $(this.parentElement).css('height', '48px');
+            $(this.parentElement).css('height', '50px');
             $(this).text("+");
         }
 

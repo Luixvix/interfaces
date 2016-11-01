@@ -248,6 +248,8 @@ h2{
 
 .coment {
     visibility: hidden;
+    float: left;
+    margin: 5px;
 }
 
 .expandir {
@@ -258,4 +260,12 @@ h2{
 
 .enviar {
     visibility: hidden;
+    float: left;
+    margin: 15px 0 0 25px;
+}
+
+.comentarios {
+    display: block;
+    text-align: justify;
+    margin: 5px !IMPORTANT;
 }
