@@ -238,7 +238,7 @@ h2{
     visibility: hidden;
     overflow: hidden;
     height: 0px;
-    background-color: aliceblue;
+    background-color: #272727;
 }
 
 .pfooter {
@@ -251,6 +251,11 @@ h2{
 }
 
 .expandir {
-    display: inline-block;
+    display: block;
     text-align: center;
+    visibility: hidden;
+}
+
+.enviar {
+    visibility: hidden;
 }

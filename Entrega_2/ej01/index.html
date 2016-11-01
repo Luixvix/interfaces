@@ -55,7 +55,6 @@
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
-
                 </div>
             </div>
             <div class="col span-1-of-3 pbox ">
@@ -73,8 +72,11 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox clearfix">
-                    <p class="coment"></p>
+                <div class="textbox">
+                    <a class="expandir">+</a>
+                    <p class="comentarios"></p>
+                    <textarea class="coment"></textarea>
+                    <button class="enviar">Enviar</button>
                 </div>
             </div>
             <div class="col span-1-of-3 pbox">
@@ -86,14 +88,17 @@
                         <button class="share"><i class="ion-android-bookmark"></i></button>
                     </div>
                     <div class="picon">
-                        <button onclick=""><i class="ion-forward"></i></button>
+                        <button class="comentar"><i class="ion-forward"></i></button>
                     </div>
                     <div class="picon">
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox clearfix">
-                    <p class="coment"></p>
+                <div class="textbox">
+                    <a class="expandir">+</a>
+                    <p class="comentarios"></p>
+                    <textarea class="coment"></textarea>
+                    <button class="enviar">Enviar</button>
                 </div>
             </div>
         </div>
@@ -107,14 +112,17 @@
                         <button class="share"><i class="ion-android-bookmark"></i></button>
                     </div>
                     <div class="picon">
-                        <button onclick=""><i class="ion-forward"></i></button>
+                        <button class="comentar"><i class="ion-forward"></i></button>
                     </div>
                     <div class="picon">
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox clearfix">
-                    <p class="coment"></p>
+                <div class="textbox">
+                    <a class="expandir">+</a>
+                    <p class="comentarios"></p>
+                    <textarea class="coment"></textarea>
+                    <button class="enviar">Enviar</button>
                 </div>
             </div>
             <div class="col span-1-of-3 pbox">
@@ -126,14 +134,17 @@
                         <button class="share"><i class="ion-android-bookmark"></i></button>
                     </div>
                     <div class="picon">
-                        <button onclick=""><i class="ion-forward"></i></button>
+                        <button class="comentar"><i class="ion-forward"></i></button>
                     </div>
                     <div class="picon">
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
                 <div class="textbox">
-                    <p class="coment"></p>
+                    <a class="expandir">+</a>
+                    <p class="comentarios"></p>
+                    <textarea class="coment"></textarea>
+                    <button class="enviar">Enviar</button>
                 </div>
             </div>
             <div class="col span-1-of-3 pbox">
@@ -145,14 +156,17 @@
                         <button class="share"><i class="ion-android-bookmark"></i></button>
                     </div>
                     <div class="picon">
-                        <button onclick=""><i class="ion-forward"></i></button>
+                        <button class="comentar"><i class="ion-forward"></i></button>
                     </div>
                     <div class="picon">
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox ">
-                    <p class="coment"></p>
+                <div class="textbox">
+                    <a class="expandir">+</a>
+                    <p class="comentarios"></p>
+                    <textarea class="coment"></textarea>
+                    <button class="enviar">Enviar</button>
                 </div>
             </div>
         </div>
@@ -172,8 +186,11 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox clearfix">
-                    <p class="coment"></p>
+                <div class="textbox">
+                    <a class="expandir">+</a>
+                    <p class="comentarios"></p>
+                    <textarea class="coment"></textarea>
+                    <button class="enviar">Enviar</button>
                 </div>
             </div>
 
@@ -186,15 +203,17 @@
                         <button class="share"><i class="ion-android-bookmark"></i></button>
                     </div>
                     <div class="picon">
-                        <button onclick=""><i class="ion-forward"></i></button>
+                        <button class="comentar"><i class="ion-forward"></i></button>
                     </div>
                     <div class="picon">
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox clearfix">
-                    <p class="coment"></p>
-                    <a class="expandir"></a>
+                <div class="textbox">
+                    <a class="expandir">+</a>
+                    <p class="comentarios"></p>
+                    <textarea class="coment"></textarea>
+                    <button class="enviar">Enviar</button>
                 </div>
             </div>
             <div class="col span-1-of-3 pbox">
@@ -206,14 +225,17 @@
                         <button class="share"><i class="ion-android-bookmark"></i></button>
                     </div>
                     <div class="picon">
-                        <button onclick=""><i class="ion-forward"></i></button>
+                        <button class="comentar"><i class="ion-forward"></i></button>
                     </div>
                     <div class="picon">
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox clearfix">
-                    <p class="coment"></p>
+                <div class="textbox">
+                    <a class="expandir">+</a>
+                    <p class="comentarios"></p>
+                    <textarea class="coment"></textarea>
+                    <button class="enviar">Enviar</button>
                 </div>
             </div>
         </div>
@@ -274,24 +296,30 @@
             $(seccion).css("visibility", "visible");
             $(seccion).css('height', 'inherit');
         }
+        var expand = $(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild);
         var coment = $(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling);
+        var enviar = $(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling);
         if ($(coment).css('visibility') == 'hidden') {
-            $(coment).css("visibility", "visible");
-            $(coment).nextElementSibling.css("visibility", "visible");
+            $(coment).css('visibility', 'visible');
+            $(enviar).css('visibility', 'visible');
+            $(seccion).css('height', 'inherit');
         }
         $(".enviar").click(function () {
-            var comentario = $(this.previousElementSibling).text();
-            alert("comentario");
-            /*if (comentario != null) {
+            var comentario = $(coment).val();
+            if (comentario != null) {
                 //alert(this.nextElementSibling.nextElementSibling.className);
-                var comentarios = $(this.nextElementSibling.nextElementSibling);
+                var comentarios = $(this.previousElementSibling.previousElementSibling);
                 $(comentarios).text(comentario);
-            }*/
+            }
+            if ($(coment).css('visibility') == 'visible') {
+                $(coment).css("visibility", "hidden");
+                $(enviar).css("visibility", "hidden");
+                $(expand).css("visibility", "visible");
+                $(seccion).css('height', '48px');
+
+            }
         });
-        /*if ($(coment).css('visibility') == 'visible') {
-            $(coment).css("visibility", "hidden");
-            $(coment).nextElementSibling.css("visibility", "hidden");
-        }*/
+
     });
 
     $(".expandir").click(function () {
@@ -303,7 +331,7 @@
             $(this.parentElement).css('height', '200px');
             $(this).text("-");
         } else {
-            $(this.parentElement).css('height', '20');
+            $(this.parentElement).css('height', '48px');
             $(this).text("+");
         }
 
