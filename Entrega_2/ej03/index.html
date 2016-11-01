@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>Borderlands Fanpage</title>
 </head>
 
@@ -32,10 +35,15 @@
         </div>
     </header>
 
+    <section class="tablero">
+        <div class="draggable">Drag me</div>
+
+        <script>
+            $(".draggable").draggable();
+        </script>
+    </section>
 </body>
 
-<script>
-</script>
 
 </html>
 <!--

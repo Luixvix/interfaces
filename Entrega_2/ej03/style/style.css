@@ -269,3 +269,9 @@ h2{
     text-align: justify;
     margin: 5px !IMPORTANT;
 }
+/***********************************************************/
+.draggable {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
