@@ -54,10 +54,10 @@
     };
     $('#cpassword').focusout(function () {
         // get values on the focusout event
-        var pass = $('#password').val();
-        var pass2 = $('#cpassword').val();
+        var pass = $('#password');
+        var pass2 = $('#cpassword');
         // test them...
-        if (pass != pass2) {
+        if (pass.val() != pass2.val()) {
             alert('las contraseñas no coinciden');
         }
     });
