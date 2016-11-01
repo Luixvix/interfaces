@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style/normalize.css">
     <link rel="stylesheet" type="text/css" href="style/grid.css">
     <link rel="stylesheet" type="text/css" href="style/ionicons.css">
@@ -15,28 +16,58 @@
 <body>
     <form action="index.html" method="post">
         <h1>Sign Up</h1>
-        <legend>Dirección de Registro</legend>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="user_name">
-        <label for="name">Apellido 1:</label>
-        <input type="text" id="name" name="user_name">
-        <label for="name">Apellido 2:</label>
-        <input type="text" id="name" name="user_name">
-        <label for="mail">Email:</label>
-        <input type="email" id="mail" name="user_email">
+        <fieldset>
+            <legend>Dirección de Registro</legend>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name_d" name="user_name">
+            <label for="name">Apellido 1:</label>
+            <input type="text" id="ap_1" name="user_name">
+            <label for="name">Apellido 2:</label>
+            <input type="text" id="ap_2" name="user_name">
+            <label for="mail">Email:</label>
+            <input type="email" id="email" name="user_email"> </fieldset>
         <br>
-
-        <legend>Usuario</legend>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="user_name">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="user_password">
-        <label for="password">Password confirmation:</label>
-        <input type="password" id="password" name="user_password">
-        <label for="name">Más adelante podrá cambiar la imagen de perfil</label>
+        <fieldset>
+            <legend>Usuario</legend>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="user_name">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <label for="password">Password confirmation:</label>
+            <input type="password" id="cpassword" name="cpassword">
+            <label for="name">Más adelante podrá cambiar la imagen de perfil</label>
+        </fieldset>
         <br>
-        <button type="submit">Sign Up</button>
+        <button id="register" type="submit">Sign Up</button>
     </form>
 </body>
+<script>
+    $(".esc-policy  a").on('click', function () {
+        var name_d = $("#name_d").val();
+        var ap_1 = $("#ap_1").val();
+        var ap_2 = $("#ap_2").val();
+        var email = $("#email").val();
+        var name = $("#name").val();
+        var password = $("#password").val();
+        $.cookie('back_to_url_onPage_referesh', 1);
+        $.cookie('name_d', name_d);
+        $.cookie('ap_1', ap_1);
+        $.cookie('ap_2', ap_2);
+        $.cookie('email', email);
+        $.cookie('name', name);
+        $.cookie('password', password);
+    });
+    $(document).ready(function(){
+    var pass = $('#password').val();
+    var pass2 = $('#cpassword').val();
+
+    $('#cpassword').focusout(function(){
+        if(pass != pass2){
+            alert('the passwords didn\'t match!');
+        }
+
+    });
+});
+</script>
 
 </html>
