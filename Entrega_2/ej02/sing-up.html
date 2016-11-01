@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/Entrega_2/ej02/script/cookie.js"></script>
     <title>Borderlands SignUp Page</title>
 </head>
 
@@ -35,20 +36,29 @@
             <input type="password" id="password" name="password">
             <label for="password">Password confirmation:</label>
             <input type="password" id="cpassword" name="cpassword">
-            <label for="name">Más adelante podrá cambiar la imagen de perfil</label>
+            <label for="imagen">Más adelante podrá cambiar la imagen de perfil</label>
         </fieldset>
         <br>
         <button class="rbutton" id="register" type="submit">Sign Up</button>
     </form>
 </body>
 <script>
+    function bsubmit() {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        var n = $('#name').val();
+        var pass = $('#password').val();
+        document.cookie = name + "=" + n + ";" + expires + ";path=/";
+        document.cookie = passwd + "=" + n + ";" + expires + ";path=/";
+    };
     $('#cpassword').focusout(function () {
         // get values on the focusout event
         var pass = $('#password').val();
         var pass2 = $('#cpassword').val();
         // test them...
         if (pass != pass2) {
-            alert('the passwords didn\'t match!');
+            alert('las contraseñas no coinciden');
         }
     });
 </script>
