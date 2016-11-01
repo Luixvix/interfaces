@@ -276,9 +276,9 @@ h2{
     background: #ccc;
   }
   .droppable {
-    position: absolute;
-    left: 250px;
-    top: 0;
+
+    float: right;
+
     width: 125px;
     height: 125px;
     background: #999;
