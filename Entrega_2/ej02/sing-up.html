@@ -38,36 +38,34 @@
             <label for="name">Más adelante podrá cambiar la imagen de perfil</label>
         </fieldset>
         <br>
-        <button id="register" type="submit">Sign Up</button>
+        <button class="rbutton" id="register" type="submit">Sign Up</button>
     </form>
 </body>
 <script>
-    $(".esc-policy  a").on('click', function () {
-        var name_d = $("#name_d").val();
-        var ap_1 = $("#ap_1").val();
-        var ap_2 = $("#ap_2").val();
-        var email = $("#email").val();
-        var name = $("#name").val();
-        var password = $("#password").val();
-        $.cookie('back_to_url_onPage_referesh', 1);
-        $.cookie('name_d', name_d);
-        $.cookie('ap_1', ap_1);
-        $.cookie('ap_2', ap_2);
-        $.cookie('email', email);
-        $.cookie('name', name);
-        $.cookie('password', password);
+    $(document).ready(function () {
+        var pass = $('#password').val();
+        var pass2 = $('#cpassword').val();
+        $('#cpassword').focusout(function () {
+            if (pass != pass2) {
+                alert('the passwords didn\'t match!');
+            }
+        });
+        $("#register").on('click', function () {
+            var name_d = $("#name_d").val();
+            var ap_1 = $("#ap_1").val();
+            var ap_2 = $("#ap_2").val();
+            var email = $("#email").val();
+            var name = $("#name").val();
+            var password = $("#password").val();
+            $.cookie('back_to_url_onPage_referesh', 1);
+            $.cookie('name_d', name_d);
+            $.cookie('ap_1', ap_1);
+            $.cookie('ap_2', ap_2);
+            $.cookie('email', email);
+            $.cookie('name', name);
+            $.cookie('password', password);
+        });
     });
-    $(document).ready(function(){
-    var pass = $('#password').val();
-    var pass2 = $('#cpassword').val();
-
-    $('#cpassword').focusout(function(){
-        if(pass != pass2){
-            alert('the passwords didn\'t match!');
-        }
-
-    });
-});
 </script>
 
 </html>

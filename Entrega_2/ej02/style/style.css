@@ -486,7 +486,7 @@ select {
     border-radius: 2px;
 }
 
-button {
+.rbutton {
     padding: 19px 39px 18px 39px;
     color: white;
     background-color: #ffa804;
@@ -518,17 +518,4 @@ label.light {
 
 form {
     max-width: 550px;
-}
-span {
-  border-radius: 5px;
-  display: block;
-  font-size: 1.3em;
-  text-align: center;
-  position: absolute;
-  background: #2F558E;
-  left: 105%;
-  top: 25px;
-  width: 160px;
-  padding: 7px 10px;
-  color: #fff;
 }
