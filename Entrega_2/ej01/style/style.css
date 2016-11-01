@@ -235,7 +235,22 @@ h2{
 
 .textbox {
     display: block;
-    padding-top: 20px;
-    height: 20px;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0px;
     background-color: aliceblue;
+}
+
+.pfooter {
+    display: block;
+    padding-bottom: 5px;
+}
+
+.coment {
+    visibility: hidden;
+}
+
+.expandir {
+    display: inline-block;
+    text-align: center;
 }
