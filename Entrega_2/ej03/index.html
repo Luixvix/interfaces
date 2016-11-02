@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -36,11 +36,35 @@
 
         </div>
     </header>
+    <section class="explicacion">
+        <div class="col span-2-of-2">
+            <h2>Reglas del juego:</h2>
+        </div>
+        <div class="col span-2-of-2">
+            <p>El juego es sencillo, tienes que arrastrar las imagenes de la izquierda, a su correspondiente de la derecha.</p>
+            <br>
+            <p>El juego termina cuando todas esten en el lugar correcto.</p>
+            <br>
+            <p>Siempre que quieras reiniciar el juego, tan solo pulsa el boton de Reiniciar en el Menu</p>
+        </div>
+    </section>
 
     <section class="tablero">
         <div class="row juego-1">
-            <div class="droppable">Drop here</div>
+            <div class="droppable pacman-end">Drop here</div>
             <div class="draggable">Drag me</div>
+        </div>
+        <div class="row juego-2">
+            <div class="droppable estrella">Drop here</div>
+            <div class="draggable">Drag me</div>
+        </div>
+        <div class="row juego-3">
+            <div class="droppable circulo">Drop here</div>
+            <div class="draggable">Drag me</div>
+        </div>
+        <div class="row juego-4">
+            <div class="droppable ying-yang">Drop here</div>
+            <div class="draggable pacman"><img class="figura" src="images/claptrap-body.png" alt="Figura claptrap"> </div>
         </div>
 
 
