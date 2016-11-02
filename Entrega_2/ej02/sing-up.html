@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/Entrega_2/ej02/script/cookie.js"></script>
     <title>Borderlands SignUp Page</title>
 </head>
 
@@ -19,46 +18,256 @@
         <h1>Sign Up</h1>
         <fieldset>
             <legend>Dirección de Registro</legend>
-            <label for="name">Nombre:</label>
+            <label for="name">Nombre *:</label>
             <input type="text" id="name_d" name="user_name">
-            <label for="name">Apellido 1:</label>
+            <label for="name">Apellido 1 *:</label>
             <input type="text" id="ap_1" name="user_name">
-            <label for="name">Apellido 2:</label>
+            <label for="name">Apellido 2 *:</label>
             <input type="text" id="ap_2" name="user_name">
-            <label for="mail">Email:</label>
+            <label for="mail">Email *:</label>
             <input type="email" id="email" name="user_email"> </fieldset>
-        <br>
-        <fieldset>
-            <legend>Usuario</legend>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="user_name">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <label for="password">Password confirmation:</label>
-            <input type="password" id="cpassword" name="cpassword">
-            <label for="imagen">Más adelante podrá cambiar la imagen de perfil</label>
-        </fieldset>
-        <br>
-        <button class="rbutton" id="register" type="submit">Sign Up</button>
-    </form>
+            <br>
+            <fieldset>
+                <legend>Usuario</legend>
+                <label for="name">Nombre de usuario *:</label>
+                <input type="text" id="name" name="user_name">
+                <label for="password">Password *:</label>
+                <input type="password" id="password" name="password">
+                <label for="password">Password confirmation *:</label>
+                <input type="password" id="cpassword" name="cpassword">
+                <label for="imagen">Más adelante podrá cambiar la imagen de perfil</label>
+                <br>
+                <label for="imagen">Todos los elementos con asterisco son obligatorios</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Información de Intereses y Hobbies</legend>
+
+                <label>Intereses:</label>
+                <input type="checkbox" id="technology" value="interest_technology" name="user_interest">
+                <label class="light" for="technology">Tecnología</label>
+                <br>
+                <input type="checkbox" id="culture" value="interest_culture" name="user_interest">
+                <label class="light" for="culture">Cultura</label>
+                <br>
+                <input type="checkbox" id="art" value="interest_art" name="user_interest">
+                <label class="light" for="art">Arte</label>
+                <br>
+                <br>
+                <label for="job">Rol de trabajo:</label>
+                <select id="job" name="user_job">
+                 <option value="photo_amateur">Aficionado a la Fotografía</option>
+                 <option value="photo_pro">Profesional de la Fotografía</option>
+             </select>
+             <!-- modal content!!!-->
+             <div class="study-info">
+
+                 <h3>Información del estudio</h3>
+                 <fieldset>
+                     <label for="study_name">Nombre del estudio:</label>
+                     <input type="text" id="name_s" name="study_name">
+                     <label for="dir">Dirección:</label>
+                     <input type="text" id="dir" name="direction">
+                     <label for="tlf">Teléfono de contacto:</label>
+                     <input type="text" id="tlf" name="tlf">
+                 </fieldset>
+             </div>
+         </fieldset>
+         <!-- end of modal content!!! -->
+     </fieldset>
+     <br>
+     <button class="rbutton" id="register" onclick="bsubmit()" type="submit">Sign Up</button>
+ </form>
 </body>
 <script>
     function bsubmit() {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        var n = $('#name').val();
-        var pass = $('#password').val();
-        document.cookie = name + "=" + n + ";" + expires + ";path=/";
-        document.cookie = passwd + "=" + n + ";" + expires + ";path=/";
+        if (!$('#name_d').val()) {
+            $('#name_d').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }else
+        if (!$('#ap_1').val()) {
+            $('#ap_1').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        } else
+        if (!$('#ap_2').val()) {
+            $('#ap_2').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        } else
+        if (!$('#email').val()) {
+            $('#email').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        } else
+        if (!$('#name').val()) {
+            $('#name').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        } else
+        if (!$('#password').val()) {
+            $('#password').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        } else {
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            var n = $('#name').val();
+            var pass = $('#password').val();
+            document.cookie = name + "=" + n + ";" + expires + ";path=/";
+            document.cookie = passwd + "=" + n + ";" + expires + ";path=/";
+        }
     };
+
+
+    /* restableceer los campos */
+    $('#name_d').focusout(function () {
+        // get values on the focusout event
+        if (!$('#name_d').val()) {
+            $('#name_d').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#name_d').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+    $('#ap_1').focusout(function () {
+        // get values on the focusout event
+        if (!$('#ap_1').val()) {
+            $('#ap_1').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#ap_1').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+    $('#ap_2').focusout(function () {
+        // get values on the focusout event
+        if (!$('#ap_2').val()) {
+            $('#ap_2').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#ap_2').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+    $('#email').focusout(function () {
+        // get values on the focusout event
+        if (!$('#email').val()) {
+            $('#email').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#email').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+    $('#name').focusout(function () {
+        // get values on the focusout event
+        if (!$('#name').val()) {
+            $('#name').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#name').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+
+    $('#password').focusout(function () {
+        // get values on the focusout event
+        var pass = $('#password');
+        if (pass.val() > 8 || !$('#password').val()) {
+            $('#password').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+            alert("La contraseña no debe ser mayor a 8 caracteres.")
+        }
+        else {
+            $('#password').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
     $('#cpassword').focusout(function () {
         // get values on the focusout event
         var pass = $('#password');
         var pass2 = $('#cpassword');
         // test them...
-        if (pass.val() != pass2.val()) {
-            alert('las contraseñas no coinciden');
+        if (pass.val() != pass2.val() || !$('#cpassword')) {
+            $('#cpassword').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#cpassword').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+    $('#job').change(function () {
+        var show = $('#job');
+        $('#name_s').css("background", "red");
+        $('#dir').css("background", "red");
+        $('#tlf').css("background", "red");
+        $('#register').css("background", "red");
+        $("#register").prop("disabled", true);
+        show.next().show();
+    });
+    $('#name_s').focusout(function () {
+        // get values on the focusout event
+        if (!$('#name_s').val()) {
+            $('#name_s').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#name_s').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+    $('#dir').focusout(function () {
+        // get values on the focusout event
+        if (!$('#dir').val()) {
+            $('#dir').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#dir').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+    $('#tlf').focusout(function () {
+        // get values on the focusout event
+        if (!$('#tlf').val()) {
+            $('#tlf').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#tlf').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
         }
     });
 </script>

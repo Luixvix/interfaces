@@ -52,8 +52,8 @@
                     <p id="contraseña-form">
                         <label class="etiqueta" for="password">Contraseña</label>
                         <input id="password" name="password" type="password"> </p>
-                    <p>
-                        <input class="form-button" type="submit" value="ENVIAR" id="submit"> </p>
+                    <br>
+                    <button class="rbutton" onclick="bsubmit()" id="register" type="submit">Sign Up</button>
                 </form>
             </div>
         </div>
@@ -360,6 +360,55 @@
         /****************************/
         /****************************/
         /****************************/
+    function bsubmit() {
+
+    };
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    };
+
+    function checkCookie() {
+        var user = getCookie("name");
+        if (user != "") {
+            alert("Welcome again " + user);
+        }
+        else {
+            user = prompt("Please enter your name:", "");
+            if (user != "" && user != null) {
+                setCookie("username", user, 365);
+            }
+        }
+    };
+
+
+    $('#cpassword').focusout(function () {
+        // get values on the focusout event
+        var pass = $('#password');
+        var pass2 = $('#cpassword');
+        // test them...
+        if (pass.val() != pass2.val()) {
+            $('#cpassword').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#cpassword').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
 </script>
 
 </html>

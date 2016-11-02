@@ -520,3 +520,6 @@ label.light {
 form {
     max-width: 550px;
 }
+.study-info{
+    display: none;
+}
