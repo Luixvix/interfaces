@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -36,20 +36,50 @@
 
         </div>
     </header>
+    <section class="explicacion">
+        <div class="col span-2-of-2">
+            <h2>Reglas del juego:</h2>
+        </div>
+        <div class="col span-2-of-2">
+            <p>El juego es sencillo, tienes que arrastrar las imagenes de la izquierda, a su correspondiente de la derecha.</p>
+            <br>
+            <p>El juego termina cuando todas esten en el lugar correcto.</p>
+            <br>
+            <p>Siempre que quieras reiniciar el juego, tan solo pulsa el boton de Reiniciar en el Menu</p>
+        </div>
+    </section>
 
     <section class="tablero">
-        <div class="row juego-1">
-            <div class="droppable">Drop here</div>
-            <div class="draggable">Drag me</div>
+        <div class="row juego">
+            <div class="droppable claptrap"><img class="figura" src="images/claptrap-border.png" alt="Figura claptrap"></div>
+            <div class="draggable sirena"><img class="figura" src="images/sirena-body.png" alt="Figura sirena"></div>
+        </div>
+        <div class="row juego">
+            <div class="droppable krieg"><img class="figura" src="images/krieg-border.png" alt="Figura krieg"></div>
+            <div class="draggable gaige"><img class="figura" src="images/gaige-body.png" alt="Figura gaige"></div>
+        </div>
+        <div class="row juego">
+            <div class="droppable gaige"><img class="figura" src="images/gaige-border.png" alt="Figura gaige"></div>
+            <div class="draggable krieg"><img class="figura" src="images/krieg-body.png" alt="Figura krieg"></div>
+        </div>
+        <div class="row juego">
+            <div class="droppable sirena"><img class="figura" src="images/sirena-border.png" alt="Figura sirena"></div>
+            <div class="draggable draggable"><img class="figura" src="images/claptrap-body.png" alt="Figura claptrap"> </div>
         </div>
 
 
 
     </section>
+    <section class="row seccion-footer">
+        <div class="footer"> <a class="footer-link" href="https://opensource.org/licenses/MIT" target="_blank">Copyright</a> <a class="footer-link" href="http://store.steampowered.com/" target="_blank">Steam</a> <a class="footer-link" href="https://www.reddit.com/r/borderlands" target="_blank">Reddit</a>
+            <p> Derechos Pertenecientes a Gearbox Software. </p>
+        </div>
+    </section>
 </body>
 <script>
     $(".draggable").draggable();
     $(".droppable").droppable({
+
         drop: function () {
             alert("dropped");
         }
