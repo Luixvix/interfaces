@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script/js.cookie.js"></script>
+
     <title>Borderlands SignUp Page</title>
 </head>
 
@@ -60,7 +62,7 @@
                    <option value="photo_pro">Profesional de la Fotografía</option>
                </select>
                <!-- modal content!!!-->
-               <div class="study-info">
+               <div id="sinfo" class="study-info">
 
                    <h3>Información del estudio</h3>
                    <fieldset>
@@ -81,6 +83,7 @@
 </body>
 <script>
     function bsubmit() {
+        var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
         if (!$('#name_d').val()) {
             $('#name_d').css("background", "red");
             $('#register').css("background", "red");
@@ -96,7 +99,7 @@
             $('#register').css("background", "red");
             $("#register").prop("disabled", true);
         } else
-        if (!$('#email').val()) {
+        if (!$('#email').val() || !pattern.test($('#email').val())) {
             $('#email').css("background", "red");
             $('#register').css("background", "red");
             $("#register").prop("disabled", true);
@@ -113,18 +116,13 @@
         } else {
             $('#register').css("background", "#ffa804");
             $("#register").prop("disabled", false);
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            var expires = "expires=" + d.toUTCString();
-            var n = $('#name').val();
-            var pass = $('#password').val();
-            document.cookie = name + "=" + n + ";" + expires + ";path=/";
-            document.cookie = passwd + "=" + n + ";" + expires + ";path=/";
 
             var email = $('#email');
             var subject = 'Registro de Borderlands';
             var emailBody = 'TE GUSTAN LAS EXPLOSIONES!!!!!????';
             window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+
+            document.cookie =  $('#name').val() + "=" + $('#password').val();
         }
     };
 
@@ -227,7 +225,11 @@
             $("#register").prop("disabled", false);
         }
     });
+    /*****************************/
+    /*****************************/
+    /*****************************/
     $('#job').change(function () {
+/*
         var show = $('#job');
         $('#name_s').css("background", "red");
         $('#dir').css("background", "red");
@@ -235,8 +237,30 @@
         $('#register').css("background", "red");
         $("#register").prop("disabled", true);
         show.next().show();
+        */
+
+        var str = "";
+        $( "#job option:selected").each(function(){
+            str += $( this ).val();
+        });
+        if(str.localeCompare("photo_amateur") == 0){
+            $('#job').next().hide();
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+        if(str.localeCompare("photo_pro") == 0){
+            $('#name_s').css("background", "red");
+            $('#dir').css("background", "red");
+            $('#tlf').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+            $('#job').next().show();
+        }
     });
-    $('#name_s').focusout(function () {
+    /*****************************/
+    /*****************************/
+    /*****************************/
+    $('#name_s').change(function () {
         // get values on the focusout event
         if (!$('#name_s').val()) {
             $('#name_s').css("background", "red");
