@@ -27,7 +27,9 @@
             <label for="name">Apellido 2 *:</label>
             <input type="text" id="ap_2" name="user_name">
             <label for="mail">Email *:</label>
-            <input type="email" id="email" name="user_email"> </fieldset>
+            <input type="email" id="email" name="user_email">
+            <label for="mail">Confirmación de Email *:</label>
+            <input type="email" id="cemail" name="cuser_email"> </fieldset>
             <br>
             <fieldset>
                 <legend>Usuario</legend>
@@ -58,28 +60,33 @@
                 <br>
                 <label for="job">Rol de trabajo:</label>
                 <select id="job" name="user_job">
-                   <option value="photo_amateur">Aficionado a la Fotografía</option>
-                   <option value="photo_pro">Profesional de la Fotografía</option>
-               </select>
-               <!-- modal content!!!-->
-               <div id="sinfo" class="study-info">
+                 <option value="photo_amateur">Aficionado a la Fotografía</option>
+                 <option value="photo_pro">Profesional de la Fotografía</option>
+             </select>
+             <!-- modal content!!!-->
+             <div id="sinfo" class="study-info">
 
-                   <h3>Información del estudio</h3>
-                   <fieldset>
-                       <label for="study_name">Nombre del estudio:</label>
-                       <input type="text" id="name_s" name="study_name">
-                       <label for="dir">Dirección:</label>
-                       <input type="text" id="dir" name="direction">
-                       <label for="tlf">Teléfono de contacto:</label>
-                       <input type="text" id="tlf" name="tlf">
-                   </fieldset>
-               </div>
-           </fieldset>
-           <!-- end of modal content!!! -->
-       </fieldset>
-       <br>
-       <button class="rbutton" id="register" onclick="bsubmit()" type="submit">Sign Up</button>
-   </form>
+                 <h3>Información del estudio</h3>
+                 <fieldset>
+                     <label for="study_name">Nombre del estudio:</label>
+                     <input type="text" id="name_s" name="study_name">
+                     <label for="dir">Dirección:</label>
+                     <input type="text" id="dir" name="direction">
+                     <label for="tlf">Teléfono de contacto:</label>
+                     <input type="text" id="tlf" name="tlf">
+                 </fieldset>
+             </div>
+         </fieldset>
+         <!-- end of modal content!!! -->
+     </fieldset>
+     <br>
+     <br>
+     <input type="checkbox" id="terms" value="terms" name="user_interest">
+     <label class="light" for="terms">He leído y acepto los términos de uso.</label>
+     <br>
+     <br>
+     <button class="rbutton" id="register" onclick="bsubmit()" type="submit">Sign Up</button>
+ </form>
 </body>
 <script>
     function bsubmit() {
@@ -118,11 +125,11 @@
             $("#register").prop("disabled", false);
 
             var email = $('#email');
-            var subject = 'Registro de Borderlands';
-            var emailBody = 'TE GUSTAN LAS EXPLOSIONES!!!!!????';
-            window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+            window.open = "mailto:"+email;
 
-            document.cookie =  $('#name').val() + "=" + $('#password').val();
+            var name =  $('#name').val();
+            var pass = $('#password').val();
+            document.cookie = name + "=" + pass;
         }
     };
 
@@ -197,11 +204,11 @@
     $('#password').focusout(function () {
         // get values on the focusout event
         var pass = $('#password');
-        if (pass.val() > 8 || !$('#password').val()) {
+        if (pass.val() > 8 || !$('#password').val() || pass.val().search(/[^a-zA-Z0-9\!\@\#\$\%\^\&\*\(\)\_\+]/) != -1) {
             $('#password').css("background", "red");
             $('#register').css("background", "red");
             $("#register").prop("disabled", true);
-            alert("La contraseña no debe ser mayor a 8 caracteres.")
+            alert("La contraseña no debe ser mayor a 8 caracteres son sólo letras y números.")
         }
         else {
             $('#password').css("background", "#e8eeef");
@@ -214,13 +221,29 @@
         var pass = $('#password');
         var pass2 = $('#cpassword');
         // test them...
-        if (pass.val() != pass2.val() || !$('#cpassword')) {
+        if (pass.val() != pass2.val() || !$('#cpassword').val()) {
             $('#cpassword').css("background", "red");
             $('#register').css("background", "red");
             $("#register").prop("disabled", true);
         }
         else {
             $('#cpassword').css("background", "#e8eeef");
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
+    $('#cemail').focusout(function () {
+        // get values on the focusout event
+        var email = $('#email');
+        var email2 = $('#cemail');
+        // test them...
+        if (email.val() != email2.val() || !$('#cemail').val()) {
+            $('#cemail').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#cemail').css("background", "#e8eeef");
             $('#register').css("background", "#ffa804");
             $("#register").prop("disabled", false);
         }
@@ -258,7 +281,18 @@
         }
     });
     /*****************************/
-    /*****************************/
+    /*****************************
+    $('#terms').change(function () {
+        // get values on the focusout event
+        if (!$('#terms').val()) {
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+        }
+        else {
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+    });
     /*****************************/
     $('#name_s').change(function () {
         // get values on the focusout event
