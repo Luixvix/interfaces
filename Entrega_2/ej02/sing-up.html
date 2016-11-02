@@ -56,28 +56,28 @@
                 <br>
                 <label for="job">Rol de trabajo:</label>
                 <select id="job" name="user_job">
-                 <option value="photo_amateur">Aficionado a la Fotografía</option>
-                 <option value="photo_pro">Profesional de la Fotografía</option>
-             </select>
-             <!-- modal content!!!-->
-             <div class="study-info">
+                   <option value="photo_amateur">Aficionado a la Fotografía</option>
+                   <option value="photo_pro">Profesional de la Fotografía</option>
+               </select>
+               <!-- modal content!!!-->
+               <div class="study-info">
 
-                 <h3>Información del estudio</h3>
-                 <fieldset>
-                     <label for="study_name">Nombre del estudio:</label>
-                     <input type="text" id="name_s" name="study_name">
-                     <label for="dir">Dirección:</label>
-                     <input type="text" id="dir" name="direction">
-                     <label for="tlf">Teléfono de contacto:</label>
-                     <input type="text" id="tlf" name="tlf">
-                 </fieldset>
-             </div>
-         </fieldset>
-         <!-- end of modal content!!! -->
-     </fieldset>
-     <br>
-     <button class="rbutton" id="register" onclick="bsubmit()" type="submit">Sign Up</button>
- </form>
+                   <h3>Información del estudio</h3>
+                   <fieldset>
+                       <label for="study_name">Nombre del estudio:</label>
+                       <input type="text" id="name_s" name="study_name">
+                       <label for="dir">Dirección:</label>
+                       <input type="text" id="dir" name="direction">
+                       <label for="tlf">Teléfono de contacto:</label>
+                       <input type="text" id="tlf" name="tlf">
+                   </fieldset>
+               </div>
+           </fieldset>
+           <!-- end of modal content!!! -->
+       </fieldset>
+       <br>
+       <button class="rbutton" id="register" onclick="bsubmit()" type="submit">Sign Up</button>
+   </form>
 </body>
 <script>
     function bsubmit() {
@@ -120,6 +120,11 @@
             var pass = $('#password').val();
             document.cookie = name + "=" + n + ";" + expires + ";path=/";
             document.cookie = passwd + "=" + n + ";" + expires + ";path=/";
+
+            var email = $('#email');
+            var subject = 'Registro de Borderlands';
+            var emailBody = 'TE GUSTAN LAS EXPLOSIONES!!!!!????';
+            window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
         }
     };
 
