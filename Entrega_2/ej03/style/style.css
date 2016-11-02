@@ -304,8 +304,6 @@ h2 {
 
 /***********************************************************/
 
-
-
 .droppable {
     float: right;
     width: 125px;
@@ -313,19 +311,19 @@ h2 {
     background: rgba(153, 153, 153, 0.35);
     color: rgba(255, 255, 255, 0.33);
     padding: 15px;
-
 }
-.draggable{
+
+.draggable {
     width: 100px;
     height: 100px;
 }
-.figura{
+
+.figura {
     max-height: 100px;
     max-width: 100px;
 }
-.juego{
+
+.juego {
     padding-top: 40px;
+    padding-bottom: 15px;
 }
-
-
-
