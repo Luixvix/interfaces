@@ -27,7 +27,7 @@
                 <div class="menu-cabecera">
                     <div class="col span-1-of-3 menu-options">
                         <div class="col span-2-of-2 menu-boton">
-                            <li><a href="#">Reiniciar</a> </li>
+                            <li><a href="javascript:location.reload()">Reiniciar</a> </li>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
         </div>
     </header>
     <section class="explicacion">
-        <div class="row">
+        <div class="row reglas">
             <div class="col span-2-of-2">
                 <h2>Reglas del juego:</h2>
             </div>
@@ -51,7 +51,7 @@
     </section>
 
     <section class="tablero">
-        <div class="row juego clraefix">
+        <div class="row juego">
             <div class="droppable droppable-claptrap"><img class="figura" src="images/claptrap-border.png" alt="Figura claptrap"></div>
             <div class="draggable sal"><img class="figura" src="images/salvador-body.png" alt="Figura gaige"></div>
         </div>
@@ -67,9 +67,6 @@
             <div class="droppable droppable-gaige"><img class="figura" src="images/gaige-border.png" alt="Figura gaige"></div>
             <div class="draggable claptrap"><img class="figura" src="images/claptrap-body.png" alt="Figura claptrap"> </div>
         </div>
-
-
-
     </section>
     <section class="row seccion-footer">
         <div class="footer"> <a class="footer-link" href="https://opensource.org/licenses/MIT" target="_blank">Copyright</a> <a class="footer-link" href="http://store.steampowered.com/" target="_blank">Steam</a> <a class="footer-link" href="https://www.reddit.com/r/borderlands" target="_blank">Reddit</a>
@@ -82,25 +79,35 @@
     if (num >= 4) {
         alert("Has ganado");
     }
-    $(".draggable").draggable();
+    $(".draggable").draggable({
+
+    });
 
     $(".droppable-claptrap").droppable({
         accept: ".claptrap",
-        drop: function () {
+
+        drop: function (event, ui) {
+            ui.draggable.position({of: $(this)});
+            //alert("Dropped");
             num = num + 1;
 
         }
     });
     $(".droppable-gaige").droppable({
         accept: ".gaige",
-        drop: function () {
+        drop: function (event, ui) {
+            ui.draggable.position({of: $(this)});
+            //alert("Dropped");
             num = num + 1;
 
         }
     });
     $(".droppable-sal").droppable({
         accept: ".sal",
-        drop: function () {
+        drop: function (event, ui) {
+            ui.draggable.position({of: $(this)});
+            $(ui.draggable).attr('src','images/salvador.png');
+            //alert("Dropped");
             num = num + 1;
 
         }
@@ -108,7 +115,9 @@
 
     $(".droppable-krieg").droppable({
         accept: ".krieg",
-        drop: function () {
+        drop: function (event, ui) {
+            ui.draggable.position({of: $(this)});
+            //alert("Dropped");
             num = num + 1;
 
         }

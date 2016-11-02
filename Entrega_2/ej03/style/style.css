@@ -310,12 +310,14 @@ h2 {
     height: 125px;
     background: rgba(153, 153, 153, 0.35);
     color: rgba(255, 255, 255, 0.33);
-    padding: 15px;
+    padding: 13px;
+    border-radius: 50%;
 }
 
 .draggable {
     width: 100px;
     height: 100px;
+
 }
 
 .figura {
@@ -324,6 +326,11 @@ h2 {
 }
 
 .juego {
-    padding-top: 40px;
-    padding-bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 10px 15px 10px;
+
+}
+
+.reglas {
+    background-color: rgba(0, 0, 0, 0.5);
 }
