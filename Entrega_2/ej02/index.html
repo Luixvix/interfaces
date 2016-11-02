@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script/js.cookie.js"></script>
     <title>Borderlands Fanpage</title>
 </head>
 
@@ -379,17 +380,9 @@
                 $('#register').css("background", "#ffa804");
                 $("#register").prop("disabled", false);
             }
-            var user = getCookieName("name");
-            var pass = getCookiePass("password");
-            if (user != "") {
-                alert("Welcome again " + user);
-            }
-            else {
-                user = prompt("Please enter your name:", "");
-                if (user != "" && user != null) {
-                    setCookie("username", user, 365);
-                }
-            }
+            var c = document.cookie;
+            alert(c);
+
         };
 
         function getCookieName(cname) {
