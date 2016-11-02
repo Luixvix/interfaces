@@ -50,30 +50,36 @@
     </section>
 
     <section class="tablero">
-        <div class="row juego-1">
-            <div class="droppable pacman-end">Drop here</div>
-            <div class="draggable">Drag me</div>
+        <div class="row juego">
+            <div class="droppable claptrap"><img class="figura" src="images/claptrap-border.png" alt="Figura claptrap"></div>
+            <div class="draggable sirena"><img class="figura" src="images/sirena-body.png" alt="Figura sirena"></div>
         </div>
-        <div class="row juego-2">
-            <div class="droppable estrella">Drop here</div>
-            <div class="draggable">Drag me</div>
+        <div class="row juego">
+            <div class="droppable krieg"><img class="figura" src="images/krieg-border.png" alt="Figura krieg"></div>
+            <div class="draggable gaige"><img class="figura" src="images/gaige-body.png" alt="Figura gaige"></div>
         </div>
-        <div class="row juego-3">
-            <div class="droppable circulo">Drop here</div>
-            <div class="draggable">Drag me</div>
+        <div class="row juego">
+            <div class="droppable gaige"><img class="figura" src="images/gaige-border.png" alt="Figura gaige"></div>
+            <div class="draggable krieg"><img class="figura" src="images/krieg-body.png" alt="Figura krieg"></div>
         </div>
-        <div class="row juego-4">
-            <div class="droppable ying-yang">Drop here</div>
-            <div class="draggable pacman"><img class="figura" src="images/claptrap-body.png" alt="Figura claptrap"> </div>
+        <div class="row juego">
+            <div class="droppable sirena"><img class="figura" src="images/sirena-border.png" alt="Figura sirena"></div>
+            <div class="draggable draggable"><img class="figura" src="images/claptrap-body.png" alt="Figura claptrap"> </div>
         </div>
 
 
 
     </section>
+    <section class="row seccion-footer">
+        <div class="footer"> <a class="footer-link" href="https://opensource.org/licenses/MIT" target="_blank">Copyright</a> <a class="footer-link" href="http://store.steampowered.com/" target="_blank">Steam</a> <a class="footer-link" href="https://www.reddit.com/r/borderlands" target="_blank">Reddit</a>
+            <p> Derechos Pertenecientes a Gearbox Software. </p>
+        </div>
+    </section>
 </body>
 <script>
     $(".draggable").draggable();
     $(".droppable").droppable({
+
         drop: function () {
             alert("dropped");
         }
