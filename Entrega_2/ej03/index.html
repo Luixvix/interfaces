@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+-->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -53,19 +54,19 @@
     <section class="tablero">
         <div class="row juego">
             <div class="droppable droppable-claptrap"><img class="figura" src="images/claptrap-border.png" alt="Figura claptrap"></div>
-            <div class="draggable sal"><img class="figura" src="images/salvador-body.png" alt="Figura gaige"></div>
+            <div class="draggable d-sal"><img class="figura" src="images/salvador-body.png" alt="Figura gaige"></div>
         </div>
         <div class="row juego">
             <div class="droppable droppable-krieg"><img class="figura" src="images/krieg-border.png" alt="Figura krieg"></div>
-            <div class="draggable gaige"><img class="figura" src="images/gaige-body.png" alt="Figura gaige"></div>
+            <div class="draggable d-gaige"><img class="figura" src="images/gaige-body.png" alt="Figura gaige"></div>
         </div>
         <div class="row juego">
             <div class="droppable droppable-sal"><img class="figura" src="images/salvador-border.png" alt="Figura sirena"></div>
-            <div class="draggable krieg"><img class="figura" src="images/krieg-body.png" alt="Figura krieg"></div>
+            <div class="draggable d-krieg"><img class="figura" src="images/krieg-body.png" alt="Figura krieg"></div>
         </div>
         <div class="row juego">
             <div class="droppable droppable-gaige"><img class="figura" src="images/gaige-border.png" alt="Figura gaige"></div>
-            <div class="draggable claptrap"><img class="figura" src="images/claptrap-body.png" alt="Figura claptrap"> </div>
+            <div class="draggable d-claptrap"><img class="figura" src="images/claptrap-body.png" alt="Figura claptrap"> </div>
         </div>
     </section>
     <section class="row seccion-footer">
@@ -84,29 +85,35 @@
     });
 
     $(".droppable-claptrap").droppable({
-        accept: ".claptrap",
+        accept: ".d-claptrap",
 
         drop: function (event, ui) {
             ui.draggable.position({of: $(this)});
+
+            $( ".d-claptrap" ).draggable( "disable" );
             //alert("Dropped");
             num = num + 1;
 
         }
     });
     $(".droppable-gaige").droppable({
-        accept: ".gaige",
+        accept: ".d-gaige",
         drop: function (event, ui) {
             ui.draggable.position({of: $(this)});
+
+            $( ".d-gaige" ).draggable( "disable" );
             //alert("Dropped");
             num = num + 1;
 
         }
     });
     $(".droppable-sal").droppable({
-        accept: ".sal",
+        accept: ".d-sal",
         drop: function (event, ui) {
+
             ui.draggable.position({of: $(this)});
-            $(ui.draggable).attr('src','images/salvador.png');
+            $(ui.draggable).attr("src",'images/salvador.png');
+            $( ".d-sal" ).draggable( "disable" );
             //alert("Dropped");
             num = num + 1;
 
@@ -114,9 +121,11 @@
     });
 
     $(".droppable-krieg").droppable({
-        accept: ".krieg",
+        accept: ".d-krieg",
         drop: function (event, ui) {
             ui.draggable.position({of: $(this)});
+
+            $( ".d-krieg" ).draggable( "disable" );
             //alert("Dropped");
             num = num + 1;
 
