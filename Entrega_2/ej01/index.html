@@ -12,8 +12,6 @@
     <title>Borderlands Fanpage</title>
 </head>
 
-
-
 <body>
     <header>
         <div class="row cabecera">
@@ -50,8 +48,7 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
@@ -72,8 +69,7 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
@@ -94,8 +90,7 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
@@ -118,8 +113,7 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
@@ -140,8 +134,7 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
@@ -162,8 +155,7 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
@@ -186,14 +178,12 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
                 </div>
             </div>
-
             <div class="col span-1-of-3 pbox">
                 <div class="photo clearfix"> <img class="rs" src="images/pg_8.jpg"> </div>
                 <div class="pfooter clearfix">
@@ -209,8 +199,7 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
@@ -231,8 +220,7 @@
                         <button class="fav"><i class="ion-heart"></i></button>
                     </div>
                 </div>
-                <div class="textbox">
-                    <a class="expandir">+</a>
+                <div class="textbox"> <a class="expandir">+</a>
                     <p class="comentarios"></p>
                     <textarea class="coment"></textarea>
                     <button class="enviar">Enviar</button>
@@ -241,104 +229,12 @@
         </div>
     </section>
     <section class="row seccion-footer">
-        <div class="footer">
-            <a class="footer-link" href="https://opensource.org/licenses/MIT" target="_blank">Copyright</a>
-            <a class="footer-link" href="http://store.steampowered.com/" target="_blank">Steam</a>
-            <a class="footer-link" href="https://www.reddit.com/r/borderlands" target="_blank">Reddit</a>
-            <p>
-                Derechos Pertenecientes a Gearbox Software.
-            </p>
+        <div class="footer"> <a class="footer-link" href="https://opensource.org/licenses/MIT" target="_blank">Copyright</a> <a class="footer-link" href="http://store.steampowered.com/" target="_blank">Steam</a> <a class="footer-link" href="https://www.reddit.com/r/borderlands" target="_blank">Reddit</a>
+            <p> Derechos Pertenecientes a Gearbox Software. </p>
         </div>
     </section>
 </body>
-
-<script>
-    var favoritos = document.querySelectorAll(".fav");
-
-    for (var i = 0; i < favoritos.length; i++) {
-
-        // https://developer.mozilla.org/es/docs/Web/API/Element/classList
-        favoritos[i].addEventListener("click",
-            function () {
-
-                if (this.firstChild.style.color == "red") {
-                    this.firstChild.style.color = "#ffa804";
-                } else {
-                    this.firstChild.style.color = "red";
-                }
-            });
-    }
-
-    /* */
-    var compartir = document.querySelectorAll(".share");
-
-
-    for (var i = 0; i < compartir.length; i++) {
-
-        // https://developer.mozilla.org/es/docs/Web/API/Element/classList
-        compartir[i].addEventListener("click",
-            function () {
-                var actual = this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild;
-                var img = this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.getAttribute("src");
-                //alert(this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.className);
-
-                actual.setAttribute("src", "images/shared.png");
-                setTimeout(function () {
-                    actual.setAttribute("src", img);
-                }, 1500);
-            });
-    }
-
-    $(".comentar").click(function () {
-        //alert(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild.className);
-        var seccion = $(this.parentNode.parentNode.parentNode.lastElementChild);
-        if ($(seccion).css('visibility') == 'hidden') {
-            $(seccion).css("visibility", "visible");
-            $(seccion).css('height', 'inherit');
-        }
-        var expand = $(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild);
-        var coment = $(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling);
-        var enviar = $(this.parentNode.parentNode.parentNode.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling);
-        if ($(coment).css('visibility') == 'hidden') {
-            $(coment).css('visibility', 'visible');
-            $(enviar).css('visibility', 'visible');
-            $(seccion).css('height', 'inherit');
-        }
-        $(".enviar").click(function () {
-            var comentario = $(coment).val();
-            if (comentario != null) {
-                //alert(this.nextElementSibling.nextElementSibling.className);
-                var comentarios = $(this.previousElementSibling.previousElementSibling);
-                $(comentarios).text(comentario);
-            }
-            if ($(coment).css('visibility') == 'visible') {
-                $(coment).css("visibility", "hidden");
-                $(enviar).css("visibility", "hidden");
-                $(expand).css("visibility", "visible");
-                $(seccion).css('height', '50px');
-
-            }
-        });
-
-    });
-
-    $(".expandir").click(function () {
-
-
-        var val = $(this).text();
-
-        if (val == "+") {
-            $(this.parentElement).css('height', 'inherit');
-            $(this).text("-");
-        } else {
-            $(this.parentElement).css('height', '50px');
-            $(this).text("+");
-        }
-
-        return false;
-
-    });
-</script>
+<script src="script/script.js"></script>
 
 </html>
 <!--
