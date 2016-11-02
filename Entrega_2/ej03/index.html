@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style/normalize.css">
+    <link rel="stylesheet" type="text/css" href="style/grid.css">
+    <link rel="stylesheet" type="text/css" href="style/ionicons.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Borderlands Fanpage</title>
+</head>
+
+
+
+<body>
+    <header>
+        <div class="row cabecera">
+            <h1>BORDELANDS</h1>
+            <h2>For Kids</h2>
+            <nav>
+                <div class="menu-cabecera">
+                    <div class="col span-1-of-3 menu-options">
+                        <div class="col span-2-of-2 menu-boton">
+                            <li><a href="#">Reiniciar</a> </li>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="tablero">
+        <div class="row juego-1">
+            <div class="droppable">Drop here</div>
+            <div class="draggable">Drag me</div>
+        </div>
+
+
+
+    </section>
+</body>
+<script>
+    $(".draggable").draggable();
+    $(".droppable").droppable({
+        drop: function () {
+            alert("dropped");
+        }
+    });
+</script>
+
+</html>
+<!--
+
+-->
