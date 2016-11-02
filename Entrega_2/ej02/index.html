@@ -379,9 +379,20 @@
                 $('#register').css("background", "#ffa804");
                 $("#register").prop("disabled", false);
             }
+            var user = getCookieName("name");
+            var pass = getCookiePass("password");
+            if (user != "") {
+                alert("Welcome again " + user);
+            }
+            else {
+                user = prompt("Please enter your name:", "");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 365);
+                }
+            }
         };
 
-        function getCookie(cname) {
+        function getCookieName(cname) {
             var name = cname + "=";
             var ca = document.cookie.split(';');
             for (var i = 0; i < ca.length; i++) {
@@ -395,18 +406,19 @@
             }
             return "";
         };
-
-        function checkCookie() {
-            var user = getCookie("name");
-            if (user != "") {
-                alert("Welcome again " + user);
-            }
-            else {
-                user = prompt("Please enter your name:", "");
-                if (user != "" && user != null) {
-                    setCookie("username", user, 365);
+        function getCookiePass(cpass) {
+            var password = cpass + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(password) == 0) {
+                    return c.substring(password.length, c.length);
                 }
             }
+            return "";
         };
 
         $('#username').focusout(function () {

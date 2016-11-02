@@ -56,28 +56,28 @@
                 <br>
                 <label for="job">Rol de trabajo:</label>
                 <select id="job" name="user_job">
-                   <option value="photo_amateur">Aficionado a la Fotografía</option>
-                   <option value="photo_pro">Profesional de la Fotografía</option>
-               </select>
-               <!-- modal content!!!-->
-               <div class="study-info">
+                 <option value="photo_amateur">Aficionado a la Fotografía</option>
+                 <option value="photo_pro">Profesional de la Fotografía</option>
+             </select>
+             <!-- modal content!!!-->
+             <div id="sinfo" class="study-info">
 
-                   <h3>Información del estudio</h3>
-                   <fieldset>
-                       <label for="study_name">Nombre del estudio:</label>
-                       <input type="text" id="name_s" name="study_name">
-                       <label for="dir">Dirección:</label>
-                       <input type="text" id="dir" name="direction">
-                       <label for="tlf">Teléfono de contacto:</label>
-                       <input type="text" id="tlf" name="tlf">
-                   </fieldset>
-               </div>
-           </fieldset>
-           <!-- end of modal content!!! -->
-       </fieldset>
-       <br>
-       <button class="rbutton" id="register" onclick="bsubmit()" type="submit">Sign Up</button>
-   </form>
+                 <h3>Información del estudio</h3>
+                 <fieldset>
+                     <label for="study_name">Nombre del estudio:</label>
+                     <input type="text" id="name_s" name="study_name">
+                     <label for="dir">Dirección:</label>
+                     <input type="text" id="dir" name="direction">
+                     <label for="tlf">Teléfono de contacto:</label>
+                     <input type="text" id="tlf" name="tlf">
+                 </fieldset>
+             </div>
+         </fieldset>
+         <!-- end of modal content!!! -->
+     </fieldset>
+     <br>
+     <button class="rbutton" id="register" onclick="bsubmit()" type="submit">Sign Up</button>
+ </form>
 </body>
 <script>
     function bsubmit() {
@@ -227,7 +227,11 @@
             $("#register").prop("disabled", false);
         }
     });
+    /*****************************/
+    /*****************************/
+    /*****************************/
     $('#job').change(function () {
+/*
         var show = $('#job');
         $('#name_s').css("background", "red");
         $('#dir').css("background", "red");
@@ -235,8 +239,30 @@
         $('#register').css("background", "red");
         $("#register").prop("disabled", true);
         show.next().show();
+        */
+
+        var str = "";
+        $( "#job option:selected").each(function(){
+            str += $( this ).val();
+        });
+        if(str.localeCompare("photo_amateur") == 0){
+            $('#job').next().hide();
+            $('#register').css("background", "#ffa804");
+            $("#register").prop("disabled", false);
+        }
+        if(str.localeCompare("photo_pro") == 0){
+            $('#name_s').css("background", "red");
+            $('#dir').css("background", "red");
+            $('#tlf').css("background", "red");
+            $('#register').css("background", "red");
+            $("#register").prop("disabled", true);
+            $('#job').next().show();
+        }
     });
-    $('#name_s').focusout(function () {
+    /*****************************/
+    /*****************************/
+    /*****************************/
+    $('#name_s').change(function () {
         // get values on the focusout event
         if (!$('#name_s').val()) {
             $('#name_s').css("background", "red");
